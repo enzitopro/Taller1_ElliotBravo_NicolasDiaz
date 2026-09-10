@@ -6,7 +6,10 @@ struct NodoServicio {
     Servicio* servicio;
     NodoServicio* siguiente;
 
-    NodoServicio(Servicio* s) : servicio(s), siguiente(nullptr) {}
+    NodoServicio(Servicio* s) {
+        servicio = s;
+        siguiente = nullptr;
+    }
 };
 
 #endif

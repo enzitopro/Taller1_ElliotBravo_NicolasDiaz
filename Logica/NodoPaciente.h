@@ -2,11 +2,14 @@
 #define NODOPACIENTE_H
 #include "../Dominio/Paciente.h"
 
-struct nodoPaciente {
+struct NodoPaciente {
     Paciente* paciente;
     NodoPaciente* siguiente;
 
-    NodoPaciente(Paciente* p) : paciente(p), siguiente(nullptr) {}
+    NodoPaciente(Paciente* p) {
+        paciente = p;
+        siguiente = nullptr;
+    }
 };
 
 #endif
