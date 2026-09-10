@@ -32,9 +32,5 @@ void Paciente::imprimirInfo() {
     cout << "ID: " << id
         << "| Nombre: " << nombre
         << "| Edad: " << edad
-        << "| Servicio " << servicioDestino
-}
-
-
-
-
+        << "| Servicio " << servicioDestino << endl;
+};
