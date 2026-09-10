@@ -4,4 +4,5 @@ project(Taller1_ElliotBravo_NicolasDiaz)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Taller1_ElliotBravo_NicolasDiaz main.cpp
-        Modelos.hpp)
+        Modelos.hpp
+        Modelos.cpp)
