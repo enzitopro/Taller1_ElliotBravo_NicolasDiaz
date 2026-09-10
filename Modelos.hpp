@@ -1,4 +1,4 @@
-#ifndef  MODELOS_HPP
+#ifndef MODELOS_HPP
 #define MODELOS_HPP
 #include <string>
 
@@ -8,7 +8,7 @@ protected:
     int edad;
 public:
     Persona(std::string nombre, int edad);
-    virtual ~Persona();
+    virtual ~Persona() = default;
 
     std::string getNombre();
     int getEdad();
@@ -19,7 +19,7 @@ private:
     std::string id;
     std::string servicioDestino;
 public:
-    Paciente(std::string nombre, int edad, std::string servicioDestino);
+    Paciente(std::string id, std::string nombre, int edad, std::string servicioDestino);
 
     std::string getId();
     std::string getServicioDestino();
