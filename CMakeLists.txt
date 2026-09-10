@@ -8,4 +8,6 @@ add_executable(Taller1_ElliotBravo_NicolasDiaz App/main.cpp
         Dominio/Persona.cpp
         Dominio/Paciente.cpp
         Dominio/Paciente.h
+        Logica/NodoPaciente.h
+        Logica/NodoServicio.h
 )
