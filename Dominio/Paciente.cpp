@@ -1,6 +1,5 @@
 #include "Paciente.h"
 #include <iostream>
-
 using namespace std;
 
 Paciente::Paciente(string i, string n, int e, string s) : Persona(n, e){

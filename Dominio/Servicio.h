@@ -9,8 +9,8 @@ private:
     ListaPacientes pacientes;
 public:
     Servicio(std::string nombre);
-    std::string getNombre();
-    void recibirPacientes(Paciente* p);
+    std::string getNombre() const;
+    void recibirPaciente(Paciente* p);
     void mostrarEstado() const;
 };
 
