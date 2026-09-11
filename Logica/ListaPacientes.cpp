@@ -32,6 +32,21 @@ void ListaPacientes::agregarPaciente(Paciente *p) {
     nodoActual->siguiente = nodo;
 }
 
+void ListaPacientes::mostrarPacientes() const {
+    //Verificamos que no este vacia
+    if (inicio == nullptr) {
+        cout << "No hay pacientes" << endl;
+        return;
+    }
+
+    Nodopaciente* nodoActual = inicio;
+    //Recorremos con un aux y imprimimos su info
+    while (nodoActual != nullptr) {
+        nodoActual-> paciente -> imprimirInfo();
+        nodoActual = nodoActual->siguiente;
+    }
+}
+
 
 
 
