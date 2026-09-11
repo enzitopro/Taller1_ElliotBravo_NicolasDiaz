@@ -2,11 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Listapaciente::ListaPacientes() {
+ListaPacientes::ListaPacientes() {
     inicio=nullptr;
 }
 
-Listapaciente::~ListaPacientes() {
+ListaPacientes::~ListaPacientes() {
 
 }
 
@@ -39,7 +39,7 @@ void ListaPacientes::mostrarPacientes() const {
         return;
     }
 
-    Nodopaciente* nodoActual = inicio;
+    NodoPaciente* nodoActual = inicio;
     //Recorremos con un aux y imprimimos su info
     while (nodoActual != nullptr) {
         nodoActual-> paciente -> imprimirInfo();

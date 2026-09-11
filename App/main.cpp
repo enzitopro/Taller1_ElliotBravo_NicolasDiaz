@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "../Dominio/hospital.h"
 using namespace std;
 
 int main() {

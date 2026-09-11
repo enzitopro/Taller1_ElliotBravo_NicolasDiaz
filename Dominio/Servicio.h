@@ -1,7 +1,7 @@
 #ifndef SERVICIO_H
 #define SERVICIO_H
 #include <string>
-#include "ListaPacientes.h"
+#include "../Logica/ListaPacientes.h"
 
 class Servicio {
 private:

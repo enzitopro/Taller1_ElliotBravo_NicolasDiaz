@@ -1,6 +1,6 @@
 #ifndef NODOSERVICIO_H
 #define NODOSERVICIO_H
-#include "Servicio.h"
+#include "../Dominio/Servicio.h"
 
 struct NodoServicio {
     Servicio* servicio;
