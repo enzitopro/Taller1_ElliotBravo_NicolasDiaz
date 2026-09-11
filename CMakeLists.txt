@@ -13,4 +13,5 @@ add_executable(Taller1_ElliotBravo_NicolasDiaz App/main.cpp
         Dominio/Servicio.h
         Dominio/Servicio.cpp
         Logica/ListaPacientes.h
+        Logica/ListaPacientes.cpp
 )
