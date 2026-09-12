@@ -6,8 +6,14 @@ ListaPacientes::ListaPacientes() {
     inicio=nullptr;
 }
 
-ListaPacientes::~ListaPacientes() {
 
+//Destructor 
+ListaPacientes::~ListaPacientes() {
+    while (inicio != nullptr) {
+        NodoPaciente* nodo = inicio->siguiente;
+        delete inicio;
+        inicio = nodo;
+    }
 }
 
 void ListaPacientes::agregarPaciente(Paciente *p) {
