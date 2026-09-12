@@ -28,6 +28,15 @@ void Hospital::lecturaPacientes() {
         getline(streamLinea, edad, ';');
         getline(streamLinea, servicio,';');
 
+        int edadBueno;
+
+        //para leer el texto
+        stringstream stringAInt(edad);
+
+        //guardamos el entero en edadBueno
+        stringAInt >> edadBueno;
+
+
     }
     archivo.close();
 }

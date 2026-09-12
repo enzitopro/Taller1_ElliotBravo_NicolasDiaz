@@ -16,4 +16,5 @@ add_executable(Taller1_ElliotBravo_NicolasDiaz App/main.cpp
         Logica/ListaPacientes.cpp
         Dominio/Hospital.h
         Dominio/Hospital.cpp
+        Logica/ColaPacientes.h
 )
