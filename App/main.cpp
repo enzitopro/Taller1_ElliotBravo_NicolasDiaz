@@ -3,7 +3,9 @@
 using namespace std;
 
 int main() {
+    Hospital hospital;
 
+    hospital.lecturaPacientes();
     int opcion;
     do {
         cout << "=== HOSPITAL MARMAJA ===" << endl;
