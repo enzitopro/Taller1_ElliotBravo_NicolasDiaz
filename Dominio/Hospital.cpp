@@ -4,6 +4,8 @@
 #include <sstream>// libreria para separar
 #include <string>
 
+#include "Paciente.h"
+#include "../Logica/ColaPacientes.h"
 using namespace std;
 
 void Hospital::lecturaPacientes() {
@@ -36,9 +38,16 @@ void Hospital::lecturaPacientes() {
         //guardamos el entero en edadBueno
         stringAInt >> edadBueno;
 
+        Paciente* p = new Paciente(id,nombre,edadBueno,servicio);
+        colaPacientes.push(p);
+
 
     }
     archivo.close();
+}
+
+void Hospital::mostarPacientes() {
+    colaPacientes.mostrarPacientes();
 }
 
 

@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     Hospital hospital;
-
     hospital.lecturaPacientes();
     int opcion;
     do {
@@ -18,10 +17,12 @@ int main() {
 
         switch (opcion) {
             case 1:
+
                 break;
             case 2:
                 break;
             case 3:
+                hospital.mostarPacientes();
                 break;
             case 4:
                 cout << "Hasta luego :D" << endl;
