@@ -10,9 +10,10 @@ using namespace std;
 
 void Hospital::lecturaPacientes() {
 
-    ifstream archivo("pacientes.txt");
+    ifstream archivo("../Dominio/pacientes.txt");
     if (!archivo.is_open()) {
         cout << "no encontrado" << endl;
+        return;
     }
 
     string linea;
