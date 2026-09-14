@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../Dominio/hospital.h"
+#include "../Dominio/Hospital.h"
 using namespace std;
 
 int main() {
@@ -17,12 +17,12 @@ int main() {
 
         switch (opcion) {
             case 1:
-
+                hospital.
                 break;
             case 2:
                 break;
             case 3:
-                hospital.mostarPacientes();
+                hospital.mostrarPacientes();
                 break;
             case 4:
                 cout << "Hasta luego :D" << endl;

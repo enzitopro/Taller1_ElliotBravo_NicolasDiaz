@@ -11,6 +11,7 @@ ListaPacientes::ListaPacientes() {
 ListaPacientes::~ListaPacientes() {
     while (inicio != nullptr) {
         NodoPaciente* nodo = inicio->siguiente;
+        delete inicio->paciente;
         delete inicio;
         inicio = nodo;
     }

@@ -46,7 +46,7 @@ void Hospital::lecturaPacientes() {
     archivo.close();
 }
 
-void Hospital::mostarPacientes() {
+void Hospital::mostrarPacientes() {
     colaPacientes.mostrarPacientes();
 }
 

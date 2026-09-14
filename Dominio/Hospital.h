@@ -14,7 +14,7 @@ class Hospital {
 
 public:
     void lecturaPacientes();
-    void mostarPacientes();
+    void mostrarPacientes();
 };
 
 #endif

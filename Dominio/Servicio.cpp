@@ -1,5 +1,8 @@
 #include "Servicio.h"
 
+#include <iostream>
+#include <ostream>
+
 #include "Paciente.h"
 using namespace std;
 
@@ -12,9 +15,10 @@ string Servicio::getNombre() const {
 }
 
 void Servicio::recibirPaciente(Paciente* p) {
-
+    pacientes.agregarPaciente(p);
 }
 
 void Servicio::mostrarEstado() const {
-
+    cout << "--- " << nombre << " ---" << endl;
+    pacientes.mostrarPacientes();
 }
