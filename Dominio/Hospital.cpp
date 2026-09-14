@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Paciente.h"
+#include "Servicio.h"
 #include "../Logica/ColaPacientes.h"
 using namespace std;
 
@@ -67,6 +68,13 @@ Servicio* Hospital::buscarServicio(string nombreBuscado) {
         }
     }
     return nullptr;
+}
+
+void Hospital::agregarServicio(std::string nombre) {
+    Servicio* nuevoServicio = new Servicio(nombre);
+    NodoServicio* servicio = new NodoServicio(nuevoServicio);
+    servicio->siguiente = inicioServicios;
+    inicioServicios = servicio;
 }
 
 Hospital::Hospital() {
