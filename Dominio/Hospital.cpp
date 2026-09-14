@@ -78,7 +78,13 @@ void Hospital::agregarServicio(std::string nombre) {
 }
 
 Hospital::Hospital() {
-
+    inicioServicios = nullptr;
+    string nombres[] = {
+        "urgencias", "cardiologia", "cirugia", "pediatria", "traumatologia", "neurologia", "medicina general", "hospitalizacion"
+    };
+    for (int i = 0; i < 8; i++) {
+        agregarServicio(nombres[i]);
+    }
 }
 
 
