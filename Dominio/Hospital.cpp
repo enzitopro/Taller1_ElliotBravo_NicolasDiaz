@@ -51,4 +51,26 @@ void Hospital::mostrarPacientes() {
     colaPacientes.mostrarPacientes();
 }
 
+void Hospital::atenderPacientes() {
+    Paciente * pacienteObjetivo = colaPacientes.front();
+    string servicioObjetivo = pacienteObjetivo->getServicio();
+
+}
+
+Servicio* Hospital::buscarServicio(string nombreBuscado) {
+    NodoServicio* cursor = inicioServicios;
+    while (cursor != nullptr) {
+        if (cursor->servicio->getNombre() == nombreBuscado) {
+            return cursor->servicio;
+        } else {
+            cursor = cursor->siguiente;
+        }
+    }
+    return nullptr;
+}
+
+Hospital::Hospital() {
+
+}
+
 
