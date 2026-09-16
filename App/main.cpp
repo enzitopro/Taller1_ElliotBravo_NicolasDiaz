@@ -18,7 +18,9 @@ int main() {
         switch (opcion) {
             case 1:
                 int cantidad;
-                cout << "Cuantos pacientes desea atender?"; cin >> cantidad;
+                cout << "=== PACIENTES EN ESPERA ===" << endl;
+                hospital.mostrarPacientes();
+                cout << "Cuantos pacientes desea atender?: "; cin >> cantidad;
                 hospital.atenderPacientes(cantidad);
                 break;
             case 2:

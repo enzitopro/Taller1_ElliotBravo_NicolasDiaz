@@ -53,6 +53,7 @@ void Hospital::mostrarPacientes() {
 }
 
 void Hospital::atenderPacientes(int cantidad) {
+    cout << "=== ATENDIENDO PACIENTES ===" << endl;
     for (int i = 0; i < cantidad; i++) {
         Paciente * pacienteObjetivo = colaPacientes.front();
         if (pacienteObjetivo == nullptr) {
@@ -65,7 +66,13 @@ void Hospital::atenderPacientes(int cantidad) {
                 cout << "El servicio buscado no existe en el Hospital" << endl;
                 break;
             }
+            cout << "ID: " << pacienteObjetivo->getId() << endl;
+            cout << "Nombre: " << pacienteObjetivo->getNombre() << endl;
+            cout << "Edad: " << pacienteObjetivo->getEdad() << endl;
+            cout << "Servicio: " << servicioObjetivo << endl;
             servicioADerivar->recibirPaciente(pacienteObjetivo);
+            cout << "Paciente enviado a " << servicioADerivar->getNombre() << "." << endl;
+            cout << "" << endl;
             colaPacientes.pop();
         }
     }
@@ -93,7 +100,7 @@ void Hospital::agregarServicio(std::string nombre) {
 Hospital::Hospital() {
     inicioServicios = nullptr;
     string nombres[] = {
-        "urgencias", "cardiologia", "cirugia", "pediatria", "traumatologia", "neurologia", "medicina general", "hospitalizacion"
+        "Urgencias", "Cardiologia", "Cirugia", "Pediatria", "Traumatologia", "Neurologia", "Medicina General", "Hospitalizacion"
     };
     for (int i = 0; i < 8; i++) {
         agregarServicio(nombres[i]);
