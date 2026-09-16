@@ -6,7 +6,7 @@ using namespace std;
 StackHistorial::StackHistorial() {
     Primero=nullptr;
 }
-
+//Los tres metodos estandar para el LIFO
 void StackHistorial::push(Paciente* paciente) {
     if (paciente==nullptr) {
         return;
@@ -15,4 +15,27 @@ void StackHistorial::push(Paciente* paciente) {
      nodo -> siguiente= Primero;
      Primero=nodo;
 }
+void StackHistorial::pop() {
+    if (Primero==nullptr) {
+        return;
+    }
+    NodoPaciente* nodo= Primero;
+    Primero = Primero->siguiente;
+
+    delete nodo;
+}
+StackHistorial::~StackHistorial() {
+    while (Primero!=nullptr) {
+        pop();
+    }
+}
+Paciente* StackHistorial::top() {
+    if (Primero==nullptr) {
+        return nullptr;
+    }
+    return Primero->paciente;
+}
+
+
+
 
