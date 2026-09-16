@@ -71,6 +71,7 @@ void Hospital::atenderPacientes(int cantidad) {
             cout << "Paciente enviado a " << servicioADerivar->getNombre() << "." << endl;
             cout << "" << endl;
             colaPacientes.pop();
+            historial.push(pacienteObjetivo);
         }
     }
 }
