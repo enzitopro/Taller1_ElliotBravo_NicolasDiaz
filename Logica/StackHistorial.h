@@ -4,7 +4,7 @@
 
 #ifndef TALLER1_ELLIOTBRAVO_NICOLASDIAZ_STACKHISTORIAL_H
 #define TALLER1_ELLIOTBRAVO_NICOLASDIAZ_STACKHISTORIAL_H
-#Include "NodoPaciente.h"
+
 #include "NodoPaciente.h"
 
 class StackHistorial {
@@ -21,7 +21,7 @@ private:
 
 
     void mostrarHistorial();
-}
+};
 
 
 
