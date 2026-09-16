@@ -6,6 +6,25 @@ using namespace std;
 StackHistorial::StackHistorial() {
     Primero=nullptr;
 }
+
+
+void StackHistorial::mostrarHistorial() {
+    if (Primero==nullptr) {
+        cout << "No hay historial" << endl;
+        return;
+    }
+    NodoPaciente* nodo = Primero;
+
+    while (nodo!=nullptr) {
+        nodo->paciente->imprimirInfo();
+        nodo = nodo->siguiente;
+
+    }
+
+
+
+}
+
 //Los tres metodos estandar para el LIFO
 void StackHistorial::push(Paciente* paciente) {
     if (paciente==nullptr) {
