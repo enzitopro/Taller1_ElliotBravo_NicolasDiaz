@@ -66,10 +66,7 @@ void Hospital::atenderPacientes(int cantidad) {
                 cout << "El servicio buscado no existe en el Hospital" << endl;
                 break;
             }
-            cout << "ID: " << pacienteObjetivo->getId() << endl;
-            cout << "Nombre: " << pacienteObjetivo->getNombre() << endl;
-            cout << "Edad: " << pacienteObjetivo->getEdad() << endl;
-            cout << "Servicio: " << servicioObjetivo << endl;
+            pacienteObjetivo->imprimirInfo();
             servicioADerivar->recibirPaciente(pacienteObjetivo);
             cout << "Paciente enviado a " << servicioADerivar->getNombre() << "." << endl;
             cout << "" << endl;
