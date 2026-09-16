@@ -17,7 +17,9 @@ int main() {
 
         switch (opcion) {
             case 1:
-                hospital.
+                int cantidad;
+                cout << "Cuantos pacientes desea atender?"; cin >> cantidad;
+                hospital.atenderPacientes(cantidad);
                 break;
             case 2:
                 break;

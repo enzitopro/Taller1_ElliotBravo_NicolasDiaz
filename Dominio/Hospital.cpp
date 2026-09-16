@@ -52,10 +52,23 @@ void Hospital::mostrarPacientes() {
     colaPacientes.mostrarPacientes();
 }
 
-void Hospital::atenderPacientes() {
-    Paciente * pacienteObjetivo = colaPacientes.front();
-    string servicioObjetivo = pacienteObjetivo->getServicio();
-
+void Hospital::atenderPacientes(int cantidad) {
+    for (int i = 0; i < cantidad; i++) {
+        Paciente * pacienteObjetivo = colaPacientes.front();
+        if (pacienteObjetivo == nullptr) {
+            cout << "No quedan pacientes por atender" << endl;
+            break;
+        } else {
+            string servicioObjetivo = pacienteObjetivo->getServicioDestino();
+            Servicio* servicioADerivar = buscarServicio(servicioObjetivo);
+            if (servicioADerivar == nullptr) {
+                cout << "El servicio buscado no existe en el Hospital" << endl;
+                break;
+            }
+            servicioADerivar->recibirPaciente(pacienteObjetivo);
+            colaPacientes.pop();
+        }
+    }
 }
 
 Servicio* Hospital::buscarServicio(string nombreBuscado) {

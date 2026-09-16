@@ -17,7 +17,7 @@ class Hospital {
 public:
     void lecturaPacientes();
     void mostrarPacientes();
-    void atenderPacientes();
+    void atenderPacientes(int cantidad);
 };
 
 #endif
