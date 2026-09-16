@@ -100,4 +100,14 @@ Hospital::Hospital() {
     }
 }
 
+Hospital::~Hospital() {
+    NodoServicio* cursor = inicioServicios;
+    NodoServicio* aux = nullptr;
+    while (cursor != nullptr) {
+        aux = cursor;
+        cursor = cursor->siguiente;
+        delete aux->servicio; delete aux;
+    }
+}
+
 

@@ -12,9 +12,10 @@ class Hospital {
     NodoServicio* inicioServicios;
     Servicio* buscarServicio(std::string nombreBuscado);
     void agregarServicio(std::string nombre);
+
+public:
     Hospital();
     ~Hospital();
-public:
     void lecturaPacientes();
     void mostrarPacientes();
     void atenderPacientes(int cantidad);
