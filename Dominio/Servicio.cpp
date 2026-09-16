@@ -4,6 +4,7 @@
 #include <ostream>
 
 #include "Paciente.h"
+
 using namespace std;
 
 Servicio::Servicio(std::string n) {
@@ -19,6 +20,7 @@ void Servicio::recibirPaciente(Paciente* p) {
 }
 
 void Servicio::mostrarEstado() const {
-    cout << "--- " << nombre << " ---" << endl;
+    cout << "=== ESTADO " << nombre << " ===" << endl;
+    cout << "Pacientes en el departamento de " << nombre << ": " << pacientes.getCantidad() << endl;
     pacientes.mostrarPacientes();
 }

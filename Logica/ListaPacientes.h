@@ -15,6 +15,7 @@ class ListaPacientes {
     //metodos
    void agregarPaciente(Paciente* p);
    void mostrarPacientes() const;
+    int getCantidad() const;
 
 };
 

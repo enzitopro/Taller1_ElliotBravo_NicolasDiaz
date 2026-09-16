@@ -94,6 +94,33 @@ void Hospital::agregarServicio(std::string nombre) {
     inicioServicios = servicio;
 }
 
+void Hospital::verDepartamento() {
+    cout << "=== DEPARTAMENTOS/SERVICIOS ===" << endl;
+    string nombresOpciones[] = {
+        "Urgencias", "Medicina General", "Cardiologia", "Neurologia",
+        "Traumatologia", "Cirugia", "Pediatria", "Hospitalizacion"
+    };
+    int opcion;
+    cout << "1. Urgencias" << endl
+        << "2. Medicina General" << endl
+        << "3. Cardiologia" << endl
+        << "4. Neurologia" << endl
+        << "5. Traumatologia" << endl
+        << "6. Cirugia" << endl
+        << "7. Pediatria" << endl
+        << "8. Hospitalizacion" << endl
+        << "Seleccionar opcion: ";
+    cin >> opcion;
+    if (1 <= opcion && opcion <= 8) {
+        Servicio* s = buscarServicio(nombresOpciones[opcion-1]);
+        if (s != nullptr) {
+            s->mostrarEstado();
+    } else {
+        cout << "Opcion inválida" << endl;
+        }
+    }
+}
+
 Hospital::Hospital() {
     inicioServicios = nullptr;
     string nombres[] = {

@@ -19,6 +19,7 @@ public:
     void lecturaPacientes();
     void mostrarPacientes();
     void atenderPacientes(int cantidad);
+    void verDepartamento();
 };
 
 #endif

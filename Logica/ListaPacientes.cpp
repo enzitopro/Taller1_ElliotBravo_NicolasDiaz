@@ -54,6 +54,15 @@ void ListaPacientes::mostrarPacientes() const {
     }
 }
 
+int ListaPacientes::getCantidad() const {
+    int contador = 0;
+    NodoPaciente* nodoActual = inicio;
+    while (nodoActual != nullptr) {
+        contador++;
+        nodoActual = nodoActual->siguiente;
+    }
+    return contador;
+}
 
 
 

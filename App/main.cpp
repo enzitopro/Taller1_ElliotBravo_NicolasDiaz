@@ -24,6 +24,7 @@ int main() {
                 hospital.atenderPacientes(cantidad);
                 break;
             case 2:
+                hospital.verDepartamento();
                 break;
             case 3:
                 hospital.mostrarPacientes();
