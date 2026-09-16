@@ -142,4 +142,8 @@ Hospital::~Hospital() {
     }
 }
 
+void Hospital::mostrarHistorial() {
+    historial.mostrarHistorial();
+
+}
 

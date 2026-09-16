@@ -24,6 +24,7 @@ public:
     void mostrarPacientes();
     void atenderPacientes(int cantidad);
     void verDepartamento();
+    void mostrarHistorial();
 };
 
 #endif

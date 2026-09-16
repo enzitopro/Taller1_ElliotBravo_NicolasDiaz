@@ -27,7 +27,8 @@ int main() {
                 hospital.verDepartamento();
                 break;
             case 3:
-                hospital.mostrarPacientes();
+                cout <<"=== HISTORIAL ===" << endl;
+                hospital.mostrarHistorial();
                 break;
             case 4:
                 cout << "Hasta luego :D" << endl;
