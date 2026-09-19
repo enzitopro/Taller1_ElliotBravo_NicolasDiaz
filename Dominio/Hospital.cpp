@@ -39,7 +39,10 @@ void Hospital::lecturaPacientes() {
 
         //guardamos el entero en edadBueno
         stringAInt >> edadBueno;
-
+        if (buscarPaciente(id) != nullptr) {
+            cout << "ID existente " << id << ". Paciente no registrado : " << nombre <<endl;
+            continue;
+        }
         Paciente* p = new Paciente(id,nombre,edadBueno,servicio);
         colaPacientes.push(p);
 
