@@ -64,6 +64,19 @@ int ListaPacientes::getCantidad() const {
     return contador;
 }
 
+Paciente *ListaPacientes::buscarPaciente(string id) {
+    NodoPaciente* nodo = inicio;
+    while (nodo != nullptr) {
+        if (nodo->paciente->getId() == id) {
+            return nodo->paciente;
+        }
+        nodo = nodo->siguiente;
+    }
+    return nullptr;
+}
+
+
+
 
 
 

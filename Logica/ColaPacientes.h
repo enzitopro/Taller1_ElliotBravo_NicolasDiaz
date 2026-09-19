@@ -18,6 +18,7 @@ public:
     void pop();
     Paciente* front();
     void mostrarPacientes();
+    Paciente* buscarPaciente(std:: string id);
 
 
 

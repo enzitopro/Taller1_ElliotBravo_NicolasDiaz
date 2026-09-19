@@ -4,7 +4,7 @@
 #include "../Logica/ColaPacientes.h"
 #include "../Logica/NodoServicio.h"
 #include "../Logica/StackHistorial.h"
-#
+
 #include <string>
 
 
@@ -25,6 +25,9 @@ public:
     void atenderPacientes(int cantidad);
     void verDepartamento();
     void mostrarHistorial();
+    Paciente* buscarPaciente(std:: string id);
+    void preguntarId();
+
 };
 
 #endif

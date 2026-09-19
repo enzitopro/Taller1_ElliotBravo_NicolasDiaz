@@ -12,6 +12,8 @@ public:
     std::string getNombre() const;
     void recibirPaciente(Paciente* p);
     void mostrarEstado() const;
+    Paciente* buscarPaciente(std:: string id);
+
 };
 
 #endif

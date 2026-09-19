@@ -146,4 +146,38 @@ void Hospital::mostrarHistorial() {
     historial.mostrarHistorial();
 
 }
+Paciente* Hospital::buscarPaciente(string id) {
+    Paciente* pacienteObjetivo = colaPacientes.buscarPaciente(id);
+    if (pacienteObjetivo != nullptr) {
+        return pacienteObjetivo;
+    }
+    NodoServicio* nodo = inicioServicios;
+
+    while (nodo != nullptr) {
+        pacienteObjetivo= nodo->servicio->buscarPaciente(id);
+        if (pacienteObjetivo != nullptr) {
+            return pacienteObjetivo;
+        }
+
+        nodo = nodo->siguiente;
+    }
+    return nullptr;
+}
+
+void Hospital::preguntarId() {
+    string idObjetivo;
+    cout << "Ingrese ID a buscar" << endl;
+    cout << "ID:  ";
+
+    cin >> idObjetivo;
+    Paciente* paciente = buscarPaciente(idObjetivo);
+
+    if (paciente == nullptr) {
+        cout << "Paciente no encontrado" << endl;
+        return;
+    }
+    paciente->imprimirInfo();
+}
+
+
 

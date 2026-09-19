@@ -24,3 +24,7 @@ void Servicio::mostrarEstado() const {
     cout << "Pacientes en el departamento de " << nombre << ": " << pacientes.getCantidad() << endl;
     pacientes.mostrarPacientes();
 }
+
+Paciente *Servicio::buscarPaciente(std::string id) {
+    return pacientes.buscarPaciente(id);
+}

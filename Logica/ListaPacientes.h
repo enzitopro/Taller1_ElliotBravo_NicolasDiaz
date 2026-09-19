@@ -13,6 +13,7 @@ class ListaPacientes {
 
    ~ListaPacientes();
     //metodos
+    Paciente* buscarPaciente(std:: string id);
    void agregarPaciente(Paciente* p);
    void mostrarPacientes() const;
     int getCantidad() const;

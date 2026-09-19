@@ -11,7 +11,8 @@ int main() {
         cout << "1. Atender pacientes" << endl;
         cout << "2. Ver departamento" << endl;
         cout << "3. Revisar historial de atencion" << endl;
-        cout << "4. Salir" << endl;
+        cout <<"4. Busqueda por ID" << endl;
+        cout << "5. Salir" << endl;
         cout << "Seleccionar opcion: ";
         cin >> opcion;
 
@@ -31,12 +32,16 @@ int main() {
                 hospital.mostrarHistorial();
                 break;
             case 4:
+                cout <<"=== ID ===" << endl;
+                hospital.preguntarId();
+                break;
+            case 5:
                 cout << "Hasta luego :D" << endl;
                 break;
             default:
                 cout << "Opcion no valida" << endl;
         }
-    } while (opcion != 4);
+    } while (opcion != 5);
 
     return 0;
 }

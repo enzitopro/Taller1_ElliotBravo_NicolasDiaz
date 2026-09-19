@@ -64,3 +64,15 @@ NodoPaciente* nodo=inicio;
         nodo=nodo->siguiente;
     }
 }
+Paciente* ColaPacientes::buscarPaciente(string id) {
+    NodoPaciente* nodo=inicio;
+    while (nodo!=nullptr) {
+        if (nodo->paciente->getId()==id) {
+            return nodo->paciente;
+        }
+
+        nodo=nodo->siguiente;
+    }
+    return nullptr;
+
+}
