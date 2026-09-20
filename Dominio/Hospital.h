@@ -16,6 +16,7 @@ class Hospital {
     NodoServicio* inicioServicios;
     Servicio* buscarServicio(std::string nombreBuscado);
     void agregarServicio(std::string nombre);
+    void limpiarCampo(std::string &campo);
 
 public:
     Hospital();

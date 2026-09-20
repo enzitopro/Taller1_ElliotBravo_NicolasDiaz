@@ -48,8 +48,10 @@ Paciente *ColaPacientes::front() {
 }
 ColaPacientes::~ColaPacientes() {
     while (inicio!=nullptr) {
-        //Reutilizamos el metodo que creamos mientras queden nodos vamos quitando el primero
-        pop();
+        NodoPaciente* nodo = inicio;
+        inicio = inicio->siguiente;
+        delete nodo->paciente;
+        delete nodo;
     }
 }
 

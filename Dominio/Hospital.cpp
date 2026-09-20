@@ -9,43 +9,73 @@
 #include "../Logica/ColaPacientes.h"
 using namespace std;
 
-void Hospital::lecturaPacientes() {
+void Hospital::limpiarCampo(std::string &campo) {
+    if (campo.empty()) return;
+    char* inicio = &campo[0];
+    char* fin = inicio + campo.size() - 1;
 
+    while (fin >= incio && (*fin == '\r' || *fin == '\n' || *fin == ' ')) {
+        fin--;
+    }
+
+    long nuevaLongitud = (fin - inicio) + 1;
+    campo.resize(nuevaLongitud);
+}
+
+void Hospital::lecturaPacientes() {
     ifstream archivo("../Dominio/pacientes.txt");
     if (!archivo.is_open()) {
-        cout << "no encontrado" << endl;
+        cout << "Error: no se encontro el archivo pacientes.txt" << endl;
         return;
     }
 
     string linea;
+    int numeroLinea = 0;
     while (getline(archivo,linea)) {
-        // libreria sstream para separar 
+        numeroLinea++;
+        if (linea.empty()) continue;
+
         stringstream streamLinea(linea);
+        string id, nombre, edad, servicio;
 
-        string id;
-        string nombre;
-        string edad;
-        string servicio;
-
-        getline(streamLinea, id, ';');
-        getline(streamLinea, nombre, ';');
-        getline(streamLinea, edad, ';');
-        getline(streamLinea, servicio,';');
-
-        int edadBueno;
-
-        //para leer el texto
-        stringstream stringAInt(edad);
-
-        //guardamos el entero en edadBueno
-        stringAInt >> edadBueno;
-        if (buscarPaciente(id) != nullptr) {
-            cout << "ID existente " << id << ". Paciente no registrado : " << nombre <<endl;
+        if (!getline(streamLinea, id, ';') ||
+        !getline(streamLinea, nombre, ';') ||
+        !getline(streamLinea, edad, ';') ||
+        !getline(streamLinea, servicio, ';')) {
+            cout << "Linea " << numeroLinea << " invalida (formato incorrecto), se omite: " << linea << endl;
             continue;
         }
+
+        limpiarCampo(id);
+        limpiarCampo(nombre);
+        limpiarCampo(edad);
+        limpiarCampo(servicio);
+
+        if (id.empty() || nombre.empty() || edad.empty() || servicio.empty()) {
+            cout << "Linea " << numeroLinea << " invalida (campo vacio), se omite: "  << linea << endl;
+            continue;
+        }
+
+        stringstream stringAInt(edad);
+        int edadBueno;
+        stringAInt >> edadBueno;
+        if (stringAInt.fail() || !stringAInt.eof() || edadBueno < 0) {
+            cout << "Linea " << numeroLinea << " invalida (edad no numerica), se omite: " << linea << endl;
+            continue;
+        }
+
+        if (buscarServicio(servicio) == nullptr) {
+            cout << "Linea " << numeroLinea << " invalida (servicio '" << servicio << "' no existe), se omite: " << linea << endl;
+            continue;
+        }
+
+        if (buscarPaciente(id) != nullptr) {
+            cout << "ID existente " << id << ". Paciente no registrado: " << nombre << endl;
+            continue;
+        }
+
         Paciente* p = new Paciente(id,nombre,edadBueno,servicio);
         colaPacientes.push(p);
-
 
     }
     archivo.close();
@@ -66,8 +96,10 @@ void Hospital::atenderPacientes(int cantidad) {
             string servicioObjetivo = pacienteObjetivo->getServicioDestino();
             Servicio* servicioADerivar = buscarServicio(servicioObjetivo);
             if (servicioADerivar == nullptr) {
-                cout << "El servicio buscado no existe en el Hospital" << endl;
-                break;
+                cout << "El servicio buscado no existe en el Hospital. Se omite este paciente" << endl;
+                colaPacientes.pop();
+                delete pacienteObjetivo;
+                continue;
             }
             pacienteObjetivo->imprimirInfo();
             servicioADerivar->recibirPaciente(pacienteObjetivo);
