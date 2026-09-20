@@ -14,7 +14,7 @@ void Hospital::limpiarCampo(std::string &campo) {
     char* inicio = &campo[0];
     char* fin = inicio + campo.size() - 1;
 
-    while (fin >= incio && (*fin == '\r' || *fin == '\n' || *fin == ' ')) {
+    while (fin >= inicio && (*fin == '\r' || *fin == '\n' || *fin == ' ')) {
         fin--;
     }
 
